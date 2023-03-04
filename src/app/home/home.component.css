@@ -228,17 +228,29 @@
   right: 4%;
 }
 
-@media screen and (max-width: 968px) {
-  .card-container, .layout {
-    width: 90%;
+
+@media screen and (max-width: 1100px) {
+  .layout {
+    width: 90% !important;
     margin: 0 auto;
+    padding: 0 5%;
   }
-
-  .main-title ~ .main-text-container {
-    padding-bottom: 20px;
-  }
-
-  .main-title ~ .main-text-container > div {
+  .purchase-form {
+    flex-direction: column;
     align-items: center;
   }
+  .input-field-1:first-child {
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .layout {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
+.layout {
+  max-width: 1100px;
 }
