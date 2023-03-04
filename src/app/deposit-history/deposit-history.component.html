@@ -1,0 +1,33 @@
+<div class="popup-bg" (click)="close()">
+</div>
+<div class="popup-window">
+  <div class="popup-title title">Deposit History <a class="icon fr" href="javascript:void(0)"
+      (click)="close()">x</a></div>
+  <div class="deposit-row" style="margin-bottom: -5px;">
+    <div class="desktop-coverage-and-collaterals less-space">
+      <div class="my-account-coverage my-account-collaterals">
+        <div class="coverage-sections">
+          <div class="sec-1">Pool</div>
+          <div class="sec-2">Amount</div>
+          <div class="sec-3">Date</div>¸
+          <!-- <div class="sec-4">Tx</div>¸ -->
+        </div>
+        <div class="line"></div>
+        <ng-container *ngFor="let deposit of depositData">
+          <div class="coverage-sections coverage-sections-light">
+            <div class="sec-1">Safe Mutal</div>
+            <div class="sec-2">{{formatBalance(+deposit.amount_)}} USDC</div>
+            <div class="sec-3">{{formatDate((+deposit.blockTimestamp) * 1000, '/')}}</div>
+            <!-- <div class="sec-4">
+              <a [href]="environment.blockBrowserUrl + deposit['id']"  target="_blank" style="color: #002f9b;">View</a>
+            </div> -->
+          </div>
+          <div class="line"></div>
+        </ng-container>
+      </div>
+      <!--  <button class="show-more show-more-button-margin desktop-button">
+            Show More <span>3</span>
+          </button>-->
+    </div>
+  </div>
+</div>

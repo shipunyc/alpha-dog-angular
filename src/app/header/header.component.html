@@ -1,0 +1,83 @@
+<div class="header">
+  <!-- on desktop view what this means is that this is only visible on desktop view in the header -->
+  <div class="header-desktop-container">
+    <div class="header-desktop">
+      <a routerLink="/"><img class="main-logo" src="/assets/images/logo.png" /></a>
+      <div class="header-desktop-list">
+        <a [ngClass]="{'selected': path=='home'}" routerLink="/home">Home</a>
+        <a [ngClass]="{'selected': path=='leaderboard'}" routerLink="/leaderboard">Leaderboard</a>
+        <a [ngClass]="{'selected': path=='create-a-club'}"  routerLink="/create-a-club">Create A Club</a>
+        <a href="doc">Doc</a>
+      </div>
+      <div class="desktop-view-only">
+        <div class="crypto-fund" style="cursor: pointer;display: flex;" (click)="switch()" *ngIf="!abbrAddress || !isCorrectNetwork">
+          <div class="eth-add" style="display: flex; align-items: center;">
+            <span class="eth-text" [ngClass]="{'smaller-text': loading}">Switch to {{environment.networkName}}</span>
+            <div *ngIf="loading" class="icon-spinner"></div>
+          </div>
+        </div>
+
+        <a routerLink="/account" *ngIf="abbrAddress && isCorrectNetwork" (click)="toggleTransactionsShown()">
+        <button class="wallet-button side-bar-button wallet-button-desktop">
+          <p class="eth-text">{{abbrAddress}}</p>
+          <img src="/assets/images/balance.svg" />
+        </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- end of desktop view  -->
+
+  <!-- on mobile view  -->
+  <!-- start of sidebar  -->
+  <div class="side-bar-container">
+    <input
+      class="side-bar-input"
+      id="slide-sidebar"
+      type="checkbox"
+      role="button"
+    />
+    <label for="slide-sidebar">
+      <img class="menu-logo" src="/assets/images/menu.svg" (click)="toggleMenu(true)" />
+    </label>
+    <!-- a div that makes the background of the page darker when the sidebar is open -->
+    <div class="background-blur" ng-show="isShow"></div>
+    <div class="sidebar" ng-show="isShow">
+      <label for="slide-sidebar">
+        <img class="side-bar-close-button" src="/assets/images/menu-close.svg" (click)="toggleMenu(false)" />
+        <!-- list of pages inside the sidebar  -->
+        <div class="sidebar-text-container">
+          <a [ngClass]="{'sidebar-current-page': path=='home'}" class="sidebar-links"  (click)="goPage('/home')">Home</a>
+          <a [ngClass]="{'sidebar-current-page': path=='leaderboard'}" class="sidebar-links" (click)="goPage('/leaderboard')">Leaderboard</a>
+          <a [ngClass]="{'sidebar-current-page': path=='create-a-club'}" class="sidebar-links" (click)="goPage('/create-a-club')">Create a Club</a>
+          <a href="doc" class="sidebar-links">Doc</a>
+
+          <div class="sidebar-line"></div>
+
+          <!-- the dropdown menu for the sidebar inside the eth button  -->
+          <div class="dropdown">
+            <button class="dropbtn">
+              <img src="/assets/images/eth.svg" />
+              <p class="eth-text">{{isCorrectNetwork ? environment.networkName : "switch to"}}</p>
+              <img src="/assets/images/keyboard_arrow_down.svg" />
+            </button>
+          </div>
+          <button class="wallet-button side-bar-button" (click)="goPage('/account')">
+            <p class="eth-text">{{abbrAddress}}</p>
+            <img src="/assets/images/balance.svg" />
+          </button>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- end of the main header -->
+
+<app-transactions-window
+  [title]="'Transactions'"
+  style="height: 100%; width: 100%; z-index: 1; position: Fixed; left: 0; top: 0;"
+  *ngIf="transactionsShown"
+  (onClose)="toggleTransactionsShown()"
+[address]="abbrAddress"
+>
+</app-transactions-window>

@@ -1,0 +1,283 @@
+<!-- start of layout header -->
+<div class="margin-from-header"></div>
+<div class="layout layout-my-account">
+  <div>
+    <div class="layout-header">
+      <div>
+        <div class="block-colored"></div>
+        <h1 class="main-title">My Account</h1>
+      </div>
+      <div class="go-back-div">
+        <img src="/assets/images/arrow-circle.svg" />
+        <h2 class="go-back">Back</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of the layout header -->
+
+<!-- start of desktop coverage and collateral  -->
+<div class="desktop-coverage-and-collaterals coverage-title-desktop">
+  My Coverage
+</div>
+<div class="desktop-coverage-and-collaterals"></div>
+<div class="desktop-coverage-and-collaterals less-space" *ngIf="!loading">
+  <div class="my-account-coverage">
+    <div class="coverage-sections">
+      <div class="sec1">Pool</div>
+      <div class="sec2">Policy</div>
+      <div class="sec3">Coverage Amount</div>
+      <div class="sec4">Coverage Period</div>
+      <div class="sec5">Purchased Date</div>
+      <div class="sec6">Status</div>
+    </div>
+    <div class="line"></div>
+
+    <ng-container *ngFor="let buy of data.buys">
+    <div class="coverage-sections coverage-sections-light">
+      <div class="sec1">Safe Mutual</div>
+      <div class="sec2">{{getPolicyName(+buy.policyIndex_)}}</div>
+      <div class="sec3">{{formatBalance(+buy.amount_)}} USDC</div>
+      <div class="sec4">{{getDateFromWeek(+buy.fromWeek_)}} - {{getDateFromWeek(+buy.toWeek_)}}</div>
+      <div class="sec5">{{formatDate((+buy.blockTimestamp) * 1000, '/')}}</div>
+      <div class="sec6"><a routerLink="/claim">Claim</a></div>
+    </div>
+    <div class="line"></div>
+    </ng-container>
+  </div>
+
+<!--  <button class="show-more show-more-button-margin desktop-button">
+    Show More <span>3</span>
+  </button>-->
+</div>
+<div class="desktop-coverage-and-collaterals coverage-title-desktop">
+  My Collaterals
+</div>
+<div class="desktop-coverage-and-collaterals less-space">
+  <div class="my-account-coverage my-account-collaterals">
+    <div class="coverage-sections">
+      <div class="sec-1">Pool</div>
+      <div class="sec-2">Type</div>
+      <div class="sec-3">Amount</div>
+      <div class="sec-4">Date</div>
+    </div>
+    <div class="line"></div>
+    <ng-container *ngFor="let deposit of data.deposits">
+    <div class="coverage-sections coverage-sections-light">
+      <div class="sec-1">Safe Mutal</div>
+      <div class="sec-2">Deposit</div>
+      <div class="sec-3">{{formatBalance(+deposit.amount_)}} USDC</div>
+      <div class="sec-4">{{formatDate((+deposit.blockTimestamp) * 1000, '/')}}</div>
+    </div>
+    <div class="line"></div>
+    </ng-container>
+  </div>
+<!--  <button class="show-more show-more-button-margin desktop-button">
+    Show More <span>3</span>
+  </button>-->
+</div>
+
+<!-- start of the main content on mobile devices each card is repeated 3 times -->
+
+<!-- end of desktop coverage and collateral  -->
+<!--<div class="mobile-coverage-and-collaterals">
+  <div class="layout">
+    <div>
+      <div class="layout-header">
+        <div>
+          <h1 class="main-title my-coverage-title">My Coverage</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-coverage">
+    <div class="my-coverage-details">
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Pool</div>
+          <div class="coverage-type">Safe One</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Coverage Amount</div>
+          <div class="coverage-type">123,456 USDC</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Purchased Date</div>
+          <div class="coverage-type">09/10/2022</div>
+        </div>
+      </div>
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Policy</div>
+          <div class="coverage-type">Smart Contract, Slashing...</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title period-space">Coverage Period</div>
+          <div class="coverage-type">09/10/2022 - 10/10/2022</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Status</div>
+          <div class="coverage-type">Claim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-coverage">
+    <div class="my-coverage-details">
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Pool</div>
+          <div class="coverage-type">Safe One</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Coverage Amount</div>
+          <div class="coverage-type">123,456 USDC</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Purchased Date</div>
+          <div class="coverage-type">09/10/2022</div>
+        </div>
+      </div>
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Policy</div>
+          <div class="coverage-type">Smart Contract, Slashing...</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Coverage Period</div>
+          <div class="coverage-type">09/10/2022 - 10/10/2022</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Status</div>
+          <div class="coverage-type">Claim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-coverage">
+    <div class="my-coverage-details">
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Pool</div>
+          <div class="coverage-type">Safe One</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Coverage Amount</div>
+          <div class="coverage-type">123,456 USDC</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Purchased Date</div>
+          <div class="coverage-type">09/10/2022</div>
+        </div>
+      </div>
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Policy</div>
+          <div class="coverage-type">Smart Contract, Slashing...</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Coverage Period</div>
+          <div class="coverage-type">09/10/2022 - 10/10/2022</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Status</div>
+          <div class="coverage-type">Claim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pending-withdraws">
+    <button class="show-more show-more-button-margin">
+      Show More <span>3</span>
+    </button>
+  </div>
+  <div class="layout">
+    <div>
+      <div class="layout-header">
+        <div>
+          <h1 class="main-title my-coverage-title">My Collaterals</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-coverage my-collaterals">
+    <div class="my-coverage-details my-collaterals-details">
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Pool</div>
+          <div class="coverage-type">Safe One</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Amount</div>
+          <div class="coverage-type">123,456 USDC</div>
+        </div>
+      </div>
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Type</div>
+          <div class="coverage-type">Deposit</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">date</div>
+          <div class="coverage-type">09/10/2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-coverage my-collaterals">
+    <div class="my-coverage-details my-collaterals-details">
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Pool</div>
+          <div class="coverage-type">Safe One</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Amount</div>
+          <div class="coverage-type">123,456 USDC</div>
+        </div>
+      </div>
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Type</div>
+          <div class="coverage-type">Deposit</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">date</div>
+          <div class="coverage-type">09/10/2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-coverage my-collaterals">
+    <div class="my-coverage-details my-collaterals-details">
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Pool</div>
+          <div class="coverage-type">Safe One</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Amount</div>
+          <div class="coverage-type">123,456 USDC</div>
+        </div>
+      </div>
+      <div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">Type</div>
+          <div class="coverage-type">Deposit</div>
+        </div>
+        <div class="coverage-title-type">
+          <div class="coverage-title">date</div>
+          <div class="coverage-type">09/10/2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pending-withdraws">
+    <button class="show-more show-more-button-margin">
+      Show More <span>3</span>
+    </button>
+  </div>
+  <div class="margin-space"></div>
+</div>-->

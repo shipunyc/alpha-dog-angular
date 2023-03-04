@@ -1,0 +1,838 @@
+.pool {
+    width: 80%;
+    margin: 0 auto;
+    /* padding: 6% 8.8%; */
+}
+
+.pool>.card {
+    width: 100%;
+}
+
+.blue-lines {
+    position: fixed;
+    width: 120vw;
+    top: 46px;
+    z-index: -1;
+    border-radius: 0px;
+}
+
+.layout-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-top: 70px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #555555;
+}
+
+@media screen and (max-width: 1250px) {
+    .pool .card-text-container {
+        padding: 0 2%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .header {
+        height: 89px;
+
+        background: linear-gradient(276.59deg, #dce3f2 0%, #edf2fc 100%);
+    }
+
+    .main-logo {
+        cursor: pointer;
+        width: 119px;
+        height: 89px;
+        margin-left: 20px;
+    }
+
+    .menu-logo {
+        margin-right: 20px;
+        width: 50px;
+    }
+
+    .main-title {
+        margin-top: 130px;
+        font-size: 36px;
+    }
+
+    .main-text-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .card-container {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .blue-lines {
+        top: -100px;
+    }
+
+    .main-title {
+        /* font-family: Avenir Next; */
+        margin-top: 130px;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+
+    .header {
+        height: 89px;
+        background: linear-gradient(276.59deg, #dce3f2 0%, #edf2fc 100%);
+    }
+
+    .side-bar-container {
+        display: none;
+    }
+
+    .header-desktop-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .header-desktop {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-logo {
+        cursor: pointer;
+        width: 119px;
+        height: 89px;
+    }
+
+    .desktop-view-only {
+        display: flex;
+        gap: 40px;
+    }
+
+    .wallet-button-desktop {
+        width: 73px;
+    }
+
+    .header-desktop-list {
+        display: flex;
+        width: 100%;
+        max-width: 324px;
+        justify-content: space-around;
+    }
+}
+
+.card {
+    border: 1px solid #999999;
+    /* margin: 30px; */
+    /* width: 75%; */
+    border-radius: 24px;
+    /* padding: 5%; */
+    transition: 0.2s background-color ease-in-out;
+    margin-top: 10px;
+    position: relative;
+    padding: 5%;
+}
+
+.card-image-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.card-available-coverage {
+    color: #666666;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+.maven-logo {
+    cursor: pointer;
+    width: 30%;
+    height: 0;
+    padding-bottom: 30%;
+    position: relative;
+    border: 1px solid #999999;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maven-logo>img {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.edit {
+    position: absolute;
+    right: 7%;
+    top: 6%;
+    width: 33px;
+    height: 19px;
+    background: white;
+    border-radius: 10px;
+    padding: 2% 4%;
+}
+
+@media screen and (min-width: 968px) {
+    .card {
+        margin-bottom: 40px;
+    }
+}
+
+
+
+.form-deposit-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 56px;
+    color: #555555;
+    background-color: white;
+    border-radius: 16px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-top: 20px;
+}
+
+.form-deposit-button:hover {
+    background: white;
+}
+
+.form-deposit-button:active {
+    background: white;
+    transform: scale(0.98);
+}
+
+.cover-amount-input {
+    width: 93%;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    padding-left: 5%;
+    /* font-size: 14px; */
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-align: left;
+    border: 1px solid white;
+}
+
+.date-input-container {
+    width: 99%;
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+}
+
+input {
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #cccccc;
+
+    letter-spacing: 0.25px;
+    text-align: left;
+}
+
+.input-margin-top {
+    margin-top: 32px;
+}
+
+.date-input-and-tag {
+    width: 46%;
+}
+
+.date-input {
+    height: 56px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+
+    /* font-size: 14px; */
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-align: left;
+    border: 1px solid white;
+}
+
+.get-cover-form-container {}
+
+
+.input-label {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin-bottom: -9px;
+    position: relative;
+    z-index: 10;
+}
+
+.input-cover-amount-label {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: white;
+    left: 18px;
+    top: 8px;
+}
+
+.max {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: right;
+    color: #555555;
+    right: 10px;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box .cover-amount-input {
+    width: 87%;
+    padding-left: 10%;
+}
+
+
+.date-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: #000000;
+    text-align: left;
+    margin-bottom: -23px;
+    top: -15px;
+    background-color: white;
+    left: 18px;
+    position: relative;
+    width: max-content;
+    z-index: 10;
+}
+
+.switch {
+    background-color: #E2E2E5;
+    border-radius: 6px;
+    width: 48px;
+    height: 28px;
+    text-align: left;
+    display: block;
+    cursor: pointer;
+    border-radius: 16px;
+    position: relative;
+}
+
+.switch.active {
+    text-align: right;
+    background-color: #002f9b;
+}
+
+.switch .switch-toggle {
+    background-color: white;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4%;
+}
+
+.switch .switch-toggle.active {
+    /* background-color: #002F9B; */
+    left: 46%;
+}
+
+.item-title {
+    margin: 0;
+}
+
+.address-list {
+    padding: 3%;
+}
+
+.block-colored {
+    margin-right: 10px;
+}
+
+.card-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-box>.card {
+    width: 40%;
+    padding: 3%;
+}
+
+.card-box>.card .card-text-container {
+    padding-left: 5%;
+    width: 60%;
+}
+
+
+.card-box .cover-amount-input {
+    height: 30px;
+    padding-left: 5%;
+    width: 95%;
+}
+
+.card-box .card-textarea {
+    height: 60px;
+    width: 94%;
+}
+
+.card-box .maven-logo {
+    /* width: 46%;
+    height: 28%; */
+}
+
+  
+.current-pool {
+    width: 35%;
+    height: 0;
+    padding-bottom: 35%;
+    border-radius: 14px;
+}
+
+.current-pool + div.card-text-container {
+    width: 45%;
+    padding-left: 5%;
+}
+
+.tab-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radio {
+    display: none;
+}
+
+/* #two-panel {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  } */
+
+#one:checked~.panels #one-panel,
+#two:checked~.panels #two-panel {
+    display: block;
+}
+
+#one:checked~.tab-box .input-field-1 .tabs #one-tab,
+#two:checked~.tab-box .input-field-1 .tabs #two-tab {
+    display: inline-block;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    border-bottom-color: transparent;
+    margin-bottom: -1px;
+}
+
+#one-tab {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0;
+}
+
+#two-tab {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-width: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0;
+}
+
+.input-field-1 {
+    max-width: 342px;
+    width: 260px;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    font-family: "Avenir-next";
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0px;
+    background: #cbd5e1;
+    display: inline-block;
+    color: white;
+    border-color: #cbd5e1;
+    border-radius: 2px;
+}
+
+.desktop-coverage-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #000000;
+}
+
+.coverage-title-desktop {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: left;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #e5e5e5;
+    margin: 12px 0;
+}
+
+.less-space {
+    margin-top: 0px;
+}
+
+/* .layout-my-account {
+    max-width: 1410px;
+    width: 90%;
+  } */
+.desktop-button {
+    margin-top: 10px;
+}
+
+.my-account-collaterals {
+    margin-top: 34px;
+}
+
+.my-account-coverage {
+    width: 100%;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.coverage-sections {
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: black;
+}
+
+.sec1 {
+    width: 24%;
+}
+
+.sec2 {
+    width: 23%;
+}
+
+.sec3 {
+    width: 23%;
+}
+
+.sec4 {
+    width: 17%;
+}
+
+.sec5 {
+    width: 18%;
+    text-align: right;
+}
+
+#two-panel .sec1 {
+    width: 25%;
+}
+
+#two-panel .sec2 {
+    width: 28%;
+}
+
+#two-panel .sec3 {
+    width: 22%;
+}
+
+#two-panel .sec4 {
+    width: 25%;
+    text-align: right;
+}
+
+.coverage-sections-light {
+    margin-top: 16px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 0.5px;
+
+    color: #000000;
+}
+
+.less-space {
+    margin-top: 40px;
+}
+
+.my-coverage {
+    max-width: 339px;
+    width: 95%;
+    height: 188px;
+    border-radius: 18px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+
+    align-items: center;
+    border: 1px solid #e2e8f0;
+}
+
+.my-coverage-details {
+    width: 90%;
+    height: 80%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin: 0 auto;
+    margin-left: 25px;
+}
+
+.coverage-title {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #666666;
+}
+
+.coverage-type {
+    color: #333333;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.coverage-title-type {
+    margin-bottom: 25px;
+}
+
+.my-collaterals {
+    height: 150px;
+}
+
+.my-collaterals-details {
+    margin-top: 25px;
+}
+
+.my-collaterals-details>div {
+    margin-right: 50px;
+}
+
+.pool .card-text-container {
+    width: 65%;
+    padding-left: 5%;
+  }
+
+
+/* .desktop-coverage-and-collaterals {
+    display: none;
+} */
+
+@media screen and (max-width: 370px) {
+    .my-coverage-details {
+        gap: 10px;
+        width: 100%;
+        margin-left: 10vw;
+    }
+}
+
+@media screen and (max-width: 338px) {
+    .my-coverage-details {
+        gap: 0px;
+        width: 100%;
+        margin-left: 0vw;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .mobile-coverage-and-collaterals {
+        display: none;
+    }
+
+    .desktop-coverage-and-collaterals {
+        display: block;
+    }
+
+
+}
+
+.margin-space {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.my-coverage-title {
+    margin-bottom: -30px;
+    margin-left: -5px;
+}
+
+.panels {
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.panel {
+    display: none;
+    animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .card-box .card {
+      width: 90%;
+    }
+    .card-box{
+      justify-content: space-between;
+    }
+    .pool {
+        width: 90%;
+    }
+    .card-image-text {
+        flex-direction: column;
+    }
+    .current-pool {
+        width: 140px !important;
+        height: 140px !important;
+    }
+    .cover-amount-input {
+        height: 30px;
+    }
+    .card-text-container {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    .card-box .maven-logo {
+        width: 140px !important;
+        height: 140px !important;
+        padding-bottom: 0;
+    }
+    .card-box > .card .card-text-container {
+        width: 100%;
+    }
+    .date-label > div.long-label {
+        max-width: 120px;
+    }
+    input {
+        font-size: 12px;
+    }
+    .tab-box {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 5%;
+    }
+    .current-pool-container > div{
+        width: 100% !important;
+    } 
+  }

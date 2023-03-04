@@ -1,0 +1,110 @@
+<!-- start of layout header -->
+<div class="margin-from-header"></div>
+<div class="layout">
+  <div>
+    <div class="layout-header">
+      <div>
+        <div class="block-colored"></div>
+        <h1 class="main-title">Andrew Doge Lovers</h1>
+      </div>
+      <div class="go-back-div">
+        <a routerLink="/earn"><img src="/assets/images/arrow-circle.svg" /></a>
+        <h2 class="go-back">Back</h2>
+      </div>
+    </div>
+
+    <div class="main-text-container">
+      <div class="text-template-1">
+        <p class="template-1-header sub-title">We are the doge lovers. Here we trade together.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of the layout header -->
+
+<div class="layout">
+  <div class="row" style="background-color: white; border-radius: 20px;margin:0">
+      <div class="col">
+        <p class="title" style="align-items: center;">AUM</p>
+        <p class="number">$23,500,240</p>
+      </div>
+      <div class="col">
+        <p class="title" style="align-items: center;">Owner's Share</p>
+        <p class="number">26.70%</p>
+      </div>
+      <div class="col">
+        <p class="title" style="align-items: center;">My Asset</p>
+        <p class="number">$34,849</p>
+      </div>
+      <div class="col">
+        <p class="title" style="align-items: center;">My Share</p>
+        <p class="number">2.7%</p>
+      </div>
+    </div>
+</div>
+
+<div class="purchase-form">
+  <div class="input-field-1">
+    <div class="input-feild-header">
+      <h1 style="display: flex; gap: 10px;">
+        <img src="/assets/images/deposit.svg" width="16px"/>
+        Deposit
+      </h1>
+      <div class="input-header-right" (click)="toggledepositPopupShow()">
+        <img src="/assets/images/history.svg" />
+        <span class="deposit-right">Deposit History</span>
+      </div>
+    </div>
+    <div class="input-container">
+      <div class="input-label">
+        <div class="input-cover-amount-label">Deposit Amount</div>
+        <div class="max" (click)="maxDeposit()">MAX</div>
+      </div>
+      <input class="form-input" type="text" [(ngModel)]="baseAmountToDeposit" [value]="baseAmountToDeposit"/>
+    </div>
+    <div class="my-wallet-amount">
+      <p>My Wallet Amount</p>
+      <p>{{formatBalance(userWalletBaseAmount)}} USDC</p>
+    </div>
+    <button class="form-deposit-button" *ngIf="allowance <= 1e18" [disabled]="approving" (click)="approve()">
+      <span>Approve
+        <span class="icon-spinner" *ngIf="approving"></span>
+      </span>
+    </button>
+    <button class="form-deposit-button" *ngIf="allowance > 1e18" [disabled]="depositing" (click)="deposit()">
+      <span>Deposit
+        <span class="icon-spinner" *ngIf="depositing"></span>
+      </span>
+    </button>
+  </div>
+  <div class="input-field-1">
+      <div class="input-feild-header">
+        <h1 style="display: flex; gap: 10px;">
+          <img src="/assets/images/withdraw.svg" width="16px"/>
+          Withdraw
+        </h1>
+        <div class="input-header-right" (click)="toggleWithdrawPopupShow()">
+          <img src="/assets/images/history.svg" />
+          <span class="deposit-right">Withdraw History</span>
+        </div>
+      </div>
+
+        <div class="input-container">
+          <div class="input-label">
+            <div class="input-cover-amount-label">Withdraw Amount</div>
+            <div class="max" (click)="maxWithdraw()">MAX</div>
+          </div>
+          <input class="form-input" type="text" [(ngModel)]="baseAmountToWithdraw" [value]="baseAmountToWithdraw"/>
+        </div>
+        <div class="my-wallet-amount">
+          <p>My Available Withdraw Amount</p>
+          <p>{{formatBalance(userAvailableWithdrawAmount)}} USDC</p>
+        </div>
+        <button class="form-deposit-button" [disabled]="withdrawing" (click)="withdraw()">
+          <span>Withdraw
+            <span class="icon-spinner" *ngIf="withdrawing"></span>
+          </span>
+        </button>
+      </div>
+</div>

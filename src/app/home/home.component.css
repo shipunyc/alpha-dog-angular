@@ -1,0 +1,244 @@
+
+
+@media screen and (min-width: 968px)
+.blue-lines {
+    top: -100px;
+}
+
+.blue-lines {
+    position: fixed;
+    width: 120vw;
+    top: 46px;
+    z-index: -1;
+    border-radius: 0px;
+}
+
+.layout-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    margin-top: 130px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 500px;
+    color: #555555;
+}
+
+.sub-title {
+    text-align: center;
+    width: 500px;
+}
+
+
+@media screen and (min-width: 700px) {
+  .header {
+    height: 89px;
+
+    background: linear-gradient(276.59deg, #dce3f2 0%, #edf2fc 100%);
+  }
+  .main-logo {
+    cursor: pointer;
+    width: 119px;
+    height: 89px;
+    margin-left: 20px;
+  }
+  .menu-logo {
+    margin-right: 20px;
+    width: 50px;
+  }
+  .main-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .card-container {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .blue-lines {
+    top: -100px;
+  }
+ 
+  .header {
+    height: 89px;
+    background: linear-gradient(276.59deg, #dce3f2 0%, #edf2fc 100%);
+  }
+
+  .side-bar-container {
+    display: none;
+  }
+
+  .header-desktop-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+  .header-desktop {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-logo {
+    cursor: pointer;
+    width: 119px;
+    height: 89px;
+  }
+  .desktop-view-only {
+    display: flex;
+    gap: 40px;
+  }
+  .wallet-button-desktop {
+    width: 73px;
+  }
+  .header-desktop-list {
+    display: flex;
+    width: 100%;
+    max-width: 324px;
+
+    justify-content: space-around;
+  }
+}
+
+.card {
+  border: 1px solid #cbd5e1;
+  width: 100%;
+  /* margin: 30px; */
+  /* max-width: 390px; */
+  /* width: 75%; */
+  border-radius: 24px;
+  padding: 14px 24px;
+  transition: 0.2s background-color ease-in-out;
+  margin-top: 10px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 305px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  background-color: #fbfbfb;
+  border-color: #0a5cff;
+  box-shadow: 0 0 15px #9ecaed;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 12px;
+}
+.card-image-text {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.card-available-coverage {
+  color: #666666;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card-text-container {
+  margin-left: 8%;
+  margin-top: -10px;
+}
+
+.card-available-amount {
+  color: #002f9b;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: -14px;
+  max-width: 160px;
+}
+
+.coverage-max-width {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+.maven-logo {
+  width: 40%;
+}
+
+.card-label {
+  color: #002f9b;;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 8%;
+}
+
+.current-apy {
+  margin-top: 10px;
+}
+
+.info {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-top: -2%;
+}
+
+@media screen and (min-width: 968px) {
+  .card {
+    margin-bottom: 40px;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 4%;
+}
+
+@media screen and (max-width: 968px) {
+  .card-container, .layout {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .main-title ~ .main-text-container {
+    padding-bottom: 20px;
+  }
+
+  .main-title ~ .main-text-container > div {
+    align-items: center;
+  }
+}

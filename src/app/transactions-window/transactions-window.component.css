@@ -1,0 +1,15 @@
+.success::after, .error::after, .pending::after {
+  margin-left: 20px;
+}
+
+.success::after{
+  content: 'success ✅';
+}
+
+.error::after{
+  content: 'error ❌';
+}
+
+.pending::after{
+  content: '...pending ⏳';
+}

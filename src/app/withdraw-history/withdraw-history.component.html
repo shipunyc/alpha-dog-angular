@@ -1,0 +1,28 @@
+<div class="popup-bg" (click)="close()">
+</div>
+<div class="popup-window">
+  <div class="popup-title title">Withdraw History <a class="icon fr" href="javascript:void(0)"
+      (click)="close()">x</a></div>
+  <div class="deposit-row" style="margin-bottom: -5px;">
+    <div class="my-account-coverage my-account-collaterals">
+      <div class="coverage-sections">
+        <div class="sec-1">Pool</div>
+        <div class="sec-2">Amount</div>
+        <div class="sec-3">Remaining</div>¸
+        <!-- <div class="sec-4">Tx</div> -->
+      </div>
+      <div class="line"></div>
+      <ng-container *ngFor="let item of withdrawRequests">
+        <div class="coverage-sections coverage-sections-light">
+          <div class="sec-1">{{pool.name}}</div>
+          <div class="sec-2">{{formatBalance(+item.amount_)}} USDC</div>
+          <div class="sec-3">{{formatDaysLeft(item.time)}} Days Left</div>
+          <!-- <div class="sec-4">
+            <a [href]="environment.blockBrowserUrl + item['id']"  target="_blank" style="color: #002f9b;">View</a>
+          </div> -->
+        </div>
+        <div class="line"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>

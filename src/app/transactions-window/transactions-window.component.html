@@ -1,0 +1,16 @@
+<div class="popup-bg" (click)="close()">
+</div>
+<div class="popup-window">
+  <div class="popup-title title">Transactions for {{address}} <a class="icon fr" href="javascript:void(0)"
+                                                                 (click)="close()">x</a></div>
+  <div class="deposit-row" style="margin-bottom: -5px;">
+    <div *ngFor="let transaction of transactionService.transactions"
+         style="display: flex; align-items: center; justify-content: space-between; width: 70%">
+      <p
+        [ngClass]="{'success' : transaction['action'] === 'SUCCESS', 'error' : transaction['action'] === 'ERROR', 'pending' : transaction['action'] === 'START'}">{{ transaction['type'] === 'STAKING_CLAIM' ? 'Staking Claim' : transaction['type'] }}</p>
+      <a [href]="'https://polygonscan.com/tx/' + transaction['transactionHash']" *ngIf="transaction['transactionHash']"
+         target="_blank">View</a>
+    </div>
+    <p *ngIf="!transactionService.transactions.length">No transactions yet</p>
+  </div>
+</div>
