@@ -41,6 +41,12 @@ export class ApiService {
     };
   }
 
+  public async getTokenPrice() {
+    const url = "https://api.gmx.io/prices";
+    const data = await this.get(url, 'getTokenPrice');
+    return (data)['0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f'];
+  }
+
   public getPolicyImage(poolIndex, policyIndex) {
     return [
       '/assets/images/tmp/metamask.svg',
