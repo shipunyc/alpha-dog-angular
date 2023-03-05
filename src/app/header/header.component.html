@@ -6,8 +6,8 @@
       <div class="header-desktop-list">
         <a [ngClass]="{'selected': path=='home'}" routerLink="/home">Home</a>
         <a [ngClass]="{'selected': path=='leaderboard'}" routerLink="/leaderboard">Leaderboard</a>
-        <a [ngClass]="{'selected': path=='create-a-club'}"  routerLink="/create-a-club">Create A Club</a>
-        <a href="doc">Doc</a>
+        <a [ngClass]="{'selected': path=='create-a-club'}" routerLink="/create-a-club">Create A Club</a>
+        <a [ngClass]="{'selected': path=='trade'}" routerLink="/trade">Trade</a>
       </div>
       <div class="desktop-view-only">
         <div class="crypto-fund" style="cursor: pointer;display: flex;" (click)="switch()" *ngIf="!abbrAddress || !isCorrectNetwork">
@@ -50,7 +50,7 @@
           <a [ngClass]="{'sidebar-current-page': path=='home'}" class="sidebar-links"  (click)="goPage('/home')">Home</a>
           <a [ngClass]="{'sidebar-current-page': path=='leaderboard'}" class="sidebar-links" (click)="goPage('/leaderboard')">Leaderboard</a>
           <a [ngClass]="{'sidebar-current-page': path=='create-a-club'}" class="sidebar-links" (click)="goPage('/create-a-club')">Create a Club</a>
-          <a href="doc" class="sidebar-links">Doc</a>
+          <a [ngClass]="{'sidebar-current-page': path=='trade'}" class="sidebar-links" (click)="goPage('/trade')">Trade</a>
 
           <div class="sidebar-line"></div>
 

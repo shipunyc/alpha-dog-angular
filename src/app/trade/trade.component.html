@@ -1,0 +1,88 @@
+<div class="margin-from-header"></div>
+
+<div class="layout" style="background-color: white;">
+  <div class="box">
+    <select class="my-select">
+      <option>GMX</option>
+    </select>
+  </div>
+  <div class="box">
+    <div class="col">
+      <p class="title" style="align-items: center;">My Asset</p>
+      <p class="number">34,849 USDC</p>
+    </div>
+    <div class="col">
+      <p class="title" style="align-items: center;">My Share</p>
+      <p class="number">2.7%</p>
+    </div>
+  </div>
+</div>
+
+<div class="layout" style="margin-top: 40px;">
+  <div class="box">
+    <div class="col">
+      <select class="my-select">
+        <option>BTC / USD</option>
+      </select>
+    </div>
+    <div class="col">
+      <p class="title" style="align-items: center;">Price</p>
+      <p class="number">$23,379</p>
+    </div>
+  </div>
+  <div class="box">
+  <div class="input-field-1">
+    <input class="radio" id="one" name="group" type="radio" checked>
+    <input class="radio" id="two" name="group" type="radio">
+    <div class="tabs">
+      <label class="tab" id="one-tab" for="one">Long</label>
+      <label class="tab" id="two-tab" for="two">Short</label>
+    </div>
+
+    <div class="input-container">
+      <div class="input-label">
+        <div class="input-cover-amount-label">Pay</div>
+        <div class="max" (click)="max()">MAX</div>
+      </div>
+      <input class="form-input" type="text" [(ngModel)]="baseAmountToTrade" [value]="baseAmountToTrade"/>
+    </div>
+    <div class="my-wallet-amount">
+      <p>Available Amount</p>
+      <p>{{formatBalance(availableAmount)}} USDC</p>
+    </div>
+    <button class="form-button" [disabled]="longing" (click)="long()">
+      <span>Long
+        <span class="icon-spinner" *ngIf="longing"></span>
+      </span>
+    </button>
+  </div>
+  </div>
+</div>
+
+<div class="layout" style="display: block;">
+  <div>
+    <div class="table">
+      <div class="row_1">
+        <div class="col_1">Position</div>
+        <div class="col_1">Net value</div>
+        <div class="col_1">Size</div>
+        <div class="col_1">Collateral</div>
+        <div class="col_1">Entry Price</div>
+        <div class="col_1">Mark Price</div>
+        <div class="col_1">Liq Price</div>
+        <div class="col_1">Operation</div>
+      </div>
+
+      <div class="row">
+        <div class="col">BTC (3X Long)</div>
+        <div class="col">$1,200 (+$4.1)</div>
+        <div class="col">$44.51</div>
+        <div class="col">$14.91</div>
+        <div class="col">$22,370</div>
+        <div class="col">$22,379</div>
+        <div class="col">$17,455</div>
+        <div class="col">close</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,6 +17,7 @@ import { AlertMessageComponent } from './alert-message/alert-message.component';
 import { DepositHistoryComponent } from './deposit-history/deposit-history.component';
 import { WithdrawHistoryComponent } from './withdraw-history/withdraw-history.component';
 import { TransactionsWindowComponent } from './transactions-window/transactions-window.component';
+import { TradeComponent } from './trade/trade.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TransactionsWindowComponent } from './transactions-window/transactions-
     AlertMessageComponent,
     DepositHistoryComponent,
     WithdrawHistoryComponent,
-    TransactionsWindowComponent
+    TransactionsWindowComponent,
+    TradeComponent
   ],
   imports: [
     BrowserModule,

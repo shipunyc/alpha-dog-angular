@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { CreateAClubComponent } from './create-a-club/create-a-club.component';
 import { ClubComponent } from './club/club.component';
+import { TradeComponent } from './trade/trade.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'leaderboard', component: LeaderboardComponent},
   { path: 'club/:clubIndex', component: ClubComponent},
   { path: 'create-a-club', component: CreateAClubComponent},
+  { path: 'trade', component: TradeComponent},
   { path: '**', component: PageNotFoundComponent },
 ];
 

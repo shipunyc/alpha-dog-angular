@@ -79,32 +79,32 @@
     </button>
   </div>
   <div class="input-field-1">
-      <div class="input-feild-header">
-        <h1 style="display: flex; gap: 10px;">
-          <img src="/assets/images/withdraw.svg" width="16px"/>
-          Withdraw
-        </h1>
-        <div class="input-header-right" (click)="toggleWithdrawPopupShow()">
-          <img src="/assets/images/history.svg" />
-          <span class="deposit-right">Withdraw History</span>
-        </div>
+    <div class="input-feild-header">
+      <h1 style="display: flex; gap: 10px;">
+        <img src="/assets/images/withdraw.svg" width="16px"/>
+        Withdraw
+      </h1>
+      <div class="input-header-right" (click)="toggleWithdrawPopupShow()">
+        <img src="/assets/images/history.svg" />
+        <span class="deposit-right">Withdraw History</span>
       </div>
+    </div>
 
-        <div class="input-container">
-          <div class="input-label">
-            <div class="input-cover-amount-label">Withdraw Amount</div>
-            <div class="max" (click)="maxWithdraw()">MAX</div>
-          </div>
-          <input class="form-input" type="text" [(ngModel)]="baseAmountToWithdraw" [value]="baseAmountToWithdraw"/>
-        </div>
-        <div class="my-wallet-amount">
-          <p>My Available Withdraw Amount</p>
-          <p>{{formatBalance(userAvailableWithdrawAmount)}} USDC</p>
-        </div>
-        <button class="form-deposit-button" [disabled]="withdrawing" (click)="withdraw()">
-          <span>Withdraw
-            <span class="icon-spinner" *ngIf="withdrawing"></span>
-          </span>
-        </button>
+    <div class="input-container">
+      <div class="input-label">
+        <div class="input-cover-amount-label">Withdraw Amount</div>
+        <div class="max" (click)="maxWithdraw()">MAX</div>
       </div>
+      <input class="form-input" type="text" [(ngModel)]="baseAmountToWithdraw" [value]="baseAmountToWithdraw"/>
+    </div>
+    <div class="my-wallet-amount">
+      <p>My Available Withdraw Amount</p>
+      <p>{{formatBalance(userAvailableWithdrawAmount)}} USDC</p>
+    </div>
+    <button class="form-deposit-button" [disabled]="withdrawing" (click)="withdraw()">
+      <span>Withdraw
+        <span class="icon-spinner" *ngIf="withdrawing"></span>
+      </span>
+    </button>
+  </div>
 </div>

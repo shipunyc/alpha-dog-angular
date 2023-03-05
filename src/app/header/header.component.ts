@@ -29,12 +29,12 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe(
       (event: any) => {
         if (event instanceof NavigationEnd) {
-          if (this.router.url.includes('/get-cover')) {
-            this.path = 'get-cover';
-          } else if (this.router.url.includes('/earn')) {
-            this.path = 'earn';
-          }  else if (this.router.url.includes('/pool')) {
-            this.path = 'pool';
+          if (this.router.url.includes('/home')) {
+            this.path = 'home';
+          } else if (this.router.url.includes('/leaderboard')) {
+            this.path = 'leaderboard';
+          }  else if (this.router.url.includes('/create-a-club')) {
+            this.path = 'create-a-club';
           } else {
             this.path = '';
           }
