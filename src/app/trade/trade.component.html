@@ -9,7 +9,7 @@
   <div class="box">
     <div class="col">
       <p class="title" style="align-items: center;">My Asset</p>
-      <p class="number">34,849 USDC</p>
+      <p class="number">$34,849</p>
     </div>
     <div class="col">
       <p class="title" style="align-items: center;">My Share</p>
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="layout" style="margin-top: 40px;">
+<div class="layout" style="margin-top: 60px;">
   <div class="box">
     <div class="col">
       <select class="my-select">
@@ -48,8 +48,16 @@
     </div>
     <div class="my-wallet-amount">
       <p>Available Amount</p>
-      <p>{{formatBalance(availableAmount)}} USDC</p>
+      <p>${{formatBalance(availableAmount)}}</p>
     </div>
+    <select class="my-select" style="margin: 10px auto 20px auto; display: block;width: 40%;">
+      <option>1x</option>
+      <option>2x</option>
+      <option>3x</option>
+      <option>5x</option>
+      <option>10x</option>
+      <option>20x</option>
+    </select>
     <button class="form-button" [disabled]="longing" (click)="long()">
       <span>Long
         <span class="icon-spinner" *ngIf="longing"></span>
@@ -70,7 +78,7 @@
         <div class="col_1">Entry Price</div>
         <div class="col_1">Mark Price</div>
         <div class="col_1">Liq Price</div>
-        <div class="col_1">Operation</div>
+        <div class="col_1"></div>
       </div>
 
       <div class="row">
