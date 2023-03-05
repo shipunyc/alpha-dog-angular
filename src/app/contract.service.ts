@@ -45,11 +45,12 @@ export class ContractService {
     const id = (+window['ethereum'].chainId).toFixed(0);
 
     let provider;
-    if (environment.web3EndPoint && (id == "1" || id == "5" || id == "137")) {
+    if (environment.web3EndPoint && (id == "1" || id == "5" || id == "137" || id == "42161")) {
       const endpoint = {
         "1": "https://mainnet.infura.io/v3/" + environment.web3EndPoint,
         "5": "https://goerli.infura.io/v3/" + environment.web3EndPoint,
-        "137": "https://polygon-mainnet.infura.io/v3/" + environment.web3EndPoint
+        "137": "https://polygon-mainnet.infura.io/v3/" + environment.web3EndPoint,
+        "42161": "https://arbitrum-mainnet.infura.io/v3/" + environment.web3EndPoint
       }[id];
 
       provider = new window['Web3'].providers.HttpProvider(endpoint);
@@ -128,6 +129,8 @@ export class ContractService {
         return 'BSC';
       case 137:
         return 'Polygon';
+      case 42161:
+        return 'Arbitrum';
       default:
         return 'unknown';
     }
@@ -141,39 +144,20 @@ export class ContractService {
     });
   }
 
-  async switchToMatic() {
+  async switchToArbitrum() {
     await window['ethereum'].request({
       method: 'wallet_addEthereumChain',
       params: [
         {
-          chainId: '0x89', // A 0x-prefixed hexadecimal string
-          chainName: 'Matic Network',
+          chainId: '0xa4b1', // A 0x-prefixed hexadecimal string
+          chainName: 'Arbitrum',
           nativeCurrency: {
-            name: 'Matic',
-            symbol: 'Matic', // 2-6 characters long
+            name: 'Ethereum',
+            symbol: 'ETH', // 2-6 characters long
             decimals: 18,
           },
-          rpcUrls: ['https://rpc-mainnet.maticvigil.com'],
-          blockExplorerUrls: ['https://polygonscan.com']
-        }
-      ]
-    });
-  }
-
-  async switchToGoerli() {
-    await window['ethereum'].request({
-      method: 'wallet_addEthereumChain',
-      params: [
-        {
-          "chainId": "0x5",
-          "chainName": "Goerli",
-          "rpcUrls": ["https://goerli.infura.io/v3/b3310249a6e64fb99324dcdd226e5a24"],
-          "nativeCurrency": {
-            "name": "Goerli ETH",
-            "symbol": "gorETH",
-            "decimals": 18
-          },
-          "blockExplorerUrls": ["https://goerli.etherscan.io"]
+          rpcUrls: ['https://arb1.arbitrum.io/rpc'],
+          blockExplorerUrls: ['https://arbiscan.io']
         }
       ]
     });

@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  web3EndPoint: 'edbb137867df490b81577ba26e6d8104',
-  networkName: 'Goerli',
-  blockBrowserUrl: "https://goerli.etherscan.io/tx/"
+  web3EndPoint: '03cc97c98dc94b6fbaf553be8a5013e6',
+  networkName: 'Arbitrum',
+  blockBrowserUrl: "https://arbiscan.io/tx/"
 };
 
 /*

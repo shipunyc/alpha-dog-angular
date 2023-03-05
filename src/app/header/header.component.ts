@@ -81,11 +81,7 @@ export class HeaderComponent implements OnInit {
   async switch() {
     this.loading = true;
     try {
-      if (environment.networkName == 'Goerli') {
-        await this.contractService.switchToGoerli();
-      } else {
-        await this.contractService.switchToMatic();
-      }
+      await this.contractService.switchToArbitrum();
     } catch(e) {
     }
     await this.load();
