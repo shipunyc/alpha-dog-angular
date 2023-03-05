@@ -17,12 +17,12 @@
           </div>
         </div>
 
-        <a routerLink="/account" *ngIf="abbrAddress && isCorrectNetwork" (click)="toggleTransactionsShown()">
-        <button class="wallet-button side-bar-button wallet-button-desktop">
-          <p class="eth-text">{{abbrAddress}}</p>
-          <img src="/assets/images/balance.svg" />
-        </button>
-        </a>
+        <div *ngIf="abbrAddress && isCorrectNetwork">
+          <button class="wallet-button side-bar-button wallet-button-desktop">
+            <p class="eth-text">{{abbrAddress}}</p>
+            <img src="/assets/images/balance.svg" />
+          </button>
+        </div>
       </div>
     </div>
   </div>

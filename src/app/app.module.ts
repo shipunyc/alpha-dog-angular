@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ClubComponent } from './club/club.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { MyAccountComponent } from './my-account/my-account.component';
 import { CreateAClubComponent } from './create-a-club/create-a-club.component';
 import { AlertMessageComponent } from './alert-message/alert-message.component';
 import { DepositHistoryComponent } from './deposit-history/deposit-history.component';
@@ -27,7 +26,6 @@ import { TradeComponent } from './trade/trade.component';
     HomeComponent,
     ClubComponent,
     LeaderboardComponent,
-    MyAccountComponent,
     CreateAClubComponent,
     AlertMessageComponent,
     DepositHistoryComponent,
